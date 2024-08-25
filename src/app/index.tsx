@@ -1,14 +1,17 @@
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
-import Animated, { FadeIn, FadeInDown, FadeOut } from 'react-native-reanimated';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ImageBackground source={require('../../assets/images/home-1.jpg')} resizeMode="cover" style={styles.backgroundImage}>
         <Animated.View entering={FadeInDown.delay(100).springify()} style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.primaryButton}>
+          <TouchableOpacity onPress={() => router.push('home')} style={styles.primaryButton}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
         </Animated.View>
