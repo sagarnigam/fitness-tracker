@@ -25,11 +25,7 @@ export default function Index() {
           style={styles.homeTextContainer}>
           <Text style={styles.homeText}>Track you <Text style={styles.hightlightText}>Workouts</Text></Text>
           <Text style={styles.homeText}>like never <Text style={styles.hightlightText}>before</Text></Text>
-        </Animated.View>
-        <Animated.View
-          entering={FadeInDown.delay(100).springify()}
-          style={styles.buttonContainer}
-        >
+
           <TouchableOpacity
             onPress={() => router.push("home")}
             style={styles.primaryButton}
@@ -54,14 +50,14 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   homeTextContainer: {
-    marginTop: "135%",
+    marginTop: "155%",
     alignItems: "center",
+    height: "27%",
   },
   homeText: {
     color: "white",
     fontSize: 30,
     fontWeight: "500",
-    // fontStyle: "italic",
   },
   hightlightText: {
     color: '#319AE5',
@@ -69,12 +65,8 @@ const styles = StyleSheet.create({
     textShadowOffset:{width: .5, height: .5},
     textShadowRadius: 2,
   },
-  buttonContainer: {
-    width: "100%",
-    alignItems: "center",
-    marginTop: "auto",
-  },
   primaryButton: {
+    marginTop: 20,
     backgroundColor: "#319AE5",
     width: "60%",
     height: "25%",
