@@ -13,8 +13,11 @@ export default function home() {
 
 const styles = StyleSheet.create({
   homeContainer: {
-    height: '100%',
-    width: '100%',
+    flex: 1,
+    padding: 15,
+    paddingTop: 60,
+    height: "100%",
+    width: "100%",
     backgroundColor: "#09131F",
   },
 });

@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end', // Align the navigation bar at the bottom
-    marginBottom: 15,
     alignItems: "center",
   },
   navBar: {
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#A9A9A930',
     paddingVertical: 10,
     borderRadius: 15,
-    width: '95%',
+    width: '100%',
   },
   navItem: {
     alignItems: 'center',
