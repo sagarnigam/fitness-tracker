@@ -27,7 +27,6 @@ export default function NavigationBar() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end', // Align the navigation bar at the bottom
     alignItems: "center",
   },
   navBar: {

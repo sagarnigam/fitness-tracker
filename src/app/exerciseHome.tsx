@@ -4,10 +4,13 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import NavigationBar from "../components/navigationBar";
+import { EXERCISE_CATEGORY } from "../mock-data/exercise-list";
+import ExerciseCategoryCard from "../components/exerciseCategory";
 
 export default function ExerciseHome() {
   return (
@@ -19,9 +22,13 @@ export default function ExerciseHome() {
           <Text style={styles.subheaderText}>Category</Text>
         </View>
         <View style={styles.exerciseListContainerContainer}>
-          <TouchableOpacity>
-            <Text style={styles.text}>My Workouts</Text>
-          </TouchableOpacity>
+          <ScrollView>
+            {EXERCISE_CATEGORY.map((item: any) => (
+              <TouchableOpacity>
+                <ExerciseCategoryCard category={item.name} icon={item.icon} />
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity>
@@ -36,9 +43,8 @@ export default function ExerciseHome() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
   },
   exerciseContainer: {
     padding: 15,
@@ -47,7 +53,9 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#09131F",
   },
-  exerciseHeaderContainer: {},
+  exerciseHeaderContainer: {
+    marginBottom: 20,
+  },
   headerText: {
     fontSize: 40,
     color: "white",
@@ -57,7 +65,8 @@ const styles = StyleSheet.create({
     color: "#319AE5",
   },
   exerciseListContainerContainer: {
-    paddingTop: 10,
+    height: "71%",
+    marginBottom: 20,
   },
   buttonContainer: {
     flexDirection: "row",
@@ -66,7 +75,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 15,
     width: "100%",
-    marginTop: "152%",
+    marginBottom: 10,
   },
   text: {
     color: "white",
