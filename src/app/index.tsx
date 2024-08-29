@@ -16,7 +16,7 @@ export default function Index() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ImageBackground
-        source={require("../../assets/images/home-1.jpg")}
+        source={require("../../assets/images/home-screen.jpg")}
         resizeMode="cover"
         style={styles.backgroundImage}
       >
