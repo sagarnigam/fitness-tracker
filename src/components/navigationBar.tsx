@@ -7,7 +7,7 @@ export default function NavigationBar() {
   const router = useRouter();
   const navigationItems = [
     { label: 'Home', icon: 'home', route: 'home' },
-    { label: 'Exercise', icon: 'barbell', route: 'exerciseHome' },
+    { label: 'Exercise', icon: 'barbell', route: 'exerciseCategoryHome' },
     { label: 'Profile', icon: 'person', route: 'profile' },
   ];
 

@@ -30,7 +30,7 @@ const generateRandomId = () => {
   return Math.random().toString(36).substr(2, 9); // Generates a random alphanumeric string
 };
 
-export const EXERCISE_List: any[] = [
+export const EXERCISE_LIST: any[] = [
   {
     id: generateRandomId(),
     exerciseCategory: "Chest",

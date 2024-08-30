@@ -8,14 +8,34 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { EXERCISE_CATEGORY } from "../mock-data/exercise-list";
-import ExerciseCategoryCard from "../components/exerciseCategoryCard";
+import { EXERCISE_LIST } from "../mock-data/exercise-list";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import ExerciseCard from "../components/exerciseCard";
 
 export default function ExercisesScreen() {
   const { category } = useLocalSearchParams();
   const router = useRouter();
+
+  let content;
+  if (
+    EXERCISE_LIST.filter((exercises) => exercises.exerciseCategory === category)
+      .length > 0
+  ) {
+    content = (
+      <ScrollView>
+        {EXERCISE_LIST.filter(
+          (exercise) => exercise.exerciseCategory === category
+        )[0].exercise.map((item: any) => (
+          <TouchableOpacity>
+            <ExerciseCard category={item.name} />
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    );
+  } else {
+    content = <Text>No exercises</Text>;
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,18 +45,10 @@ export default function ExercisesScreen() {
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back-circle" size={40} color="white" />
           </TouchableOpacity>
-          <Text style={styles.headerText}>{ category }</Text>
+          <Text style={styles.headerText}>{category}</Text>
           <Text style={styles.subheaderText}>Exercises</Text>
         </View>
-        <View style={styles.exerciseListContainerContainer}>
-          <ScrollView>
-            {EXERCISE_CATEGORY.map((item: any) => (
-              <TouchableOpacity>
-                <ExerciseCategoryCard category={item.name} icon={item.icon} />
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
+        <View style={styles.exercisesListContainerContainer}>{content}</View>
       </View>
     </SafeAreaView>
   );
@@ -65,8 +77,8 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: "#319AE5",
   },
-  exerciseListContainerContainer: {
-    height: "71%",
+  exercisesListContainerContainer: {
+    height: "82%",
     marginBottom: 20,
   },
   text: {

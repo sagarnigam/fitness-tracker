@@ -1,29 +1,21 @@
-import { LinearGradient } from "expo-linear-gradient";
-import { useRouter } from "expo-router";
 import React from "react";
 import {
   Text,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
+  View,
 } from "react-native";
 
-const ExerciseCard = ({ category, icon }) => {
-//   const router = useRouter();
+const ExerciseCard = ({ category }) => {
+  //   const router = useRouter();
 
   return (
-    <TouchableOpacity>
-      <ImageBackground source={icon} style={styles.card}>
-        <LinearGradient
-          colors={["rgba(0, 0, 0, 1)", "rgba(0, 0, 0, 0)"]} // Horizontal gradient from black to transparent
-          start={{ x: 0, y: 0 }} // Start from the left (x=0) of the container
-          end={{ x: 1, y: 0 }} // End at the right (x=1) of the container
-          style={styles.gradient}
-        >
-          <Text style={styles.categoryText}>{category}</Text>
-        </LinearGradient>
-      </ImageBackground>
-    </TouchableOpacity>
+    <View style={styles.card}>
+      <TouchableOpacity>
+        <Text style={styles.categoryText}>{category}</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -35,17 +27,14 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     borderRadius: 20,
     overflow: "hidden",
+    padding: 15,
+    paddingLeft: 20,
   },
   categoryText: {
     fontSize: 18,
     color: "#ffffff",
     fontStyle: "italic",
     fontWeight: "bold",
-  },
-  gradient: {
-    flex: 1,
-    flexDirection: "column",
-    padding: 30,
   },
 });
 

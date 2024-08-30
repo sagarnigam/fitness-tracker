@@ -12,7 +12,7 @@ import NavigationBar from "../components/navigationBar";
 import { EXERCISE_CATEGORY } from "../mock-data/exercise-list";
 import ExerciseCategoryCard from "../components/exerciseCategoryCard";
 
-export default function ExerciseHome() {
+export default function ExerciseCategoryHome() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
