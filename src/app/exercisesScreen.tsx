@@ -27,8 +27,8 @@ export default function ExercisesScreen() {
         {EXERCISE_LIST.filter(
           (exercise) => exercise.exerciseCategory === category
         )[0].exercise.map((item: any) => (
-          <TouchableOpacity>
-            <ExerciseCard category={item.name} />
+          <TouchableOpacity key={item.id}>
+            <ExerciseCard exerciseDetails={item} />
           </TouchableOpacity>
         ))}
       </ScrollView>

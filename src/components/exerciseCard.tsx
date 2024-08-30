@@ -1,21 +1,16 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
 
-const ExerciseCard = ({ category }) => {
-  //   const router = useRouter();
+const ExerciseCard = ({ exerciseDetails }) => {
+  const router = useRouter();
 
   return (
-    <View style={styles.card}>
-      <TouchableOpacity>
-        <Text style={styles.categoryText}>{category}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => router.push({pathname: "/exerciseDetailsScreen", params: { exerciseDetails: JSON.stringify(exerciseDetails), }})}>
+      <View style={styles.card}>
+        <Text style={styles.categoryText}>{exerciseDetails.name}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
