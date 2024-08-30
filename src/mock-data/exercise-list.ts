@@ -55,37 +55,100 @@ export const EXERCISE_LIST: ExerciseListAccCategory[] = [
       {
         id: generateRandomId(),
         name: "Chest Dips",
-        description: "Chest Dips",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Incline Bench Press",
-        description: "Incline Bench Press",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Bench Press",
-        description: "Bench Press",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Decline Bench Press",
-        description: "Decline Bench Press",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Cable fly",
-        description: "Cable fly",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Cable Press",
-        description: "Cable Press",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Lower Cable Press",
-        description: "Lower Cable Press",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
     ],
   },
@@ -96,32 +159,86 @@ export const EXERCISE_LIST: ExerciseListAccCategory[] = [
       {
         id: generateRandomId(),
         name: "Pullup",
-        description: "Pullup",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Barbell bentover Row",
-        description: "Barbell bentover Row",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Lat Pull Down",
-        description: "Lat Pull Down",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Rows",
-        description: "Rows",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Straight Arm Bar Pull Down",
-        description: "Straight Arm Bar Pull Down",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
       {
         id: generateRandomId(),
         name: "Close Grip Pull Down",
-        description: "Close Grip Pull Down",
+        description:
+          "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
+        muscles: ["Chest", "Triceps", "Shoulders"],
+        instructions: [
+          "Starting Position: Begin in a high plank position with your hands placed slightly wider than shoulder-width apart, arms fully extended, and legs straight behind you. Your body should form a straight line from head to heels.",
+          "Lowering Phase: Slowly lower your body by bending your elbows, keeping them at a 45-degree angle to your torso. Lower until your chest is just above the floor.",
+          "Bottom Position: Briefly pause at the bottom of the movement, ensuring your body remains straight and your core is engaged.",
+          "Pushing Phase: Push through your palms to straighten your arms and return to the starting position.",
+          "Repeat: Perform the desired number of repetitions, maintaining proper form throughout.",
+        ],
       },
     ],
   },
