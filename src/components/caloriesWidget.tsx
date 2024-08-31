@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const CaloriesWidget = () => {
   return (
     <View style={styles.card}>
-      <Text style={styles.headerText}>Calories</Text>
+      <Text style={styles.headerText}>Calories <FontAwesome6 name="fire" size={18} color="#319AE5" /></Text>
       <Text style={styles.subheaderText}>2500</Text>
+      <Text style={styles.headerText}>kcal</Text>
     </View>
   );
 };
