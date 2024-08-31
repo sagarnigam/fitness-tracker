@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 40,
     color: "white",
+    fontStyle: "italic",
   },
   subheaderText: {
     fontSize: 28,
