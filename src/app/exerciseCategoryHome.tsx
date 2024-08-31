@@ -11,8 +11,11 @@ import React from "react";
 import NavigationBar from "../components/navigationBar";
 import { EXERCISE_CATEGORY } from "../mock-data/exercise-list";
 import ExerciseCategoryCard from "../components/exerciseCategoryCard";
+import { useRouter } from "expo-router";
 
 export default function ExerciseCategoryHome() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
@@ -31,7 +34,7 @@ export default function ExerciseCategoryHome() {
           </ScrollView>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('workouts')}>
             <Text style={styles.text}>My Workouts</Text>
           </TouchableOpacity>
         </View>

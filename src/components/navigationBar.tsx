@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { useRouter } from "expo-router";
+import { useRouter, useSegments  } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function NavigationBar() {
   const router = useRouter();
+  const segments = useSegments();
+  
   const navigationItems = [
     { label: 'Home', icon: 'home', route: 'home' },
     { label: 'Exercise', icon: 'barbell', route: 'exerciseCategoryHome' },
@@ -15,7 +17,11 @@ export default function NavigationBar() {
     <View style={styles.container}>
       <View style={styles.navBar}>
         {navigationItems.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.navItem} onPress={() => router.push(item.route)}>
+          <TouchableOpacity key={index} style={styles.navItem} onPress={() => {
+            if(segments[0] !== item.route) {
+            router.push(item.route)
+            }
+          }}>
             <Ionicons name={item.icon} size={26} color="white" />
           </TouchableOpacity>
         ))}

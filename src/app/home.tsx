@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import CaloriesWidget from "../components/caloriesWidget";
 import StepsWidget from "../components/stepsWidget";
 import WaterWidget from "../components/waterWidget";
+import DailyWeightChartWidget from "../components/dailyWeightChartWidget";
 
 export default function home() {
   return (
@@ -20,9 +21,12 @@ export default function home() {
             <View style={styles.stepsContainer}>
               <StepsWidget />
             </View>
-            <View style={styles.waterComsumptionContainer}>
+            <View style={styles.waterConsumptionContainer}>
               <WaterWidget />
             </View>
+          </View>
+          <View style={styles.chartContainer}>
+            <DailyWeightChartWidget />
           </View>
         </ScrollView>
         <View style={styles.navigationContainer}>
@@ -73,10 +77,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
   },
-  waterComsumptionContainer: {
+  waterConsumptionContainer: {
     flex: 1,
     padding: 5,
   },
+  chartContainer: {},
   text: {
     color: "white",
     fontSize: 18,
