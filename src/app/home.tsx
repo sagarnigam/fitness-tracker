@@ -26,7 +26,7 @@ export default function home() {
             </View>
           </View>
           <View style={styles.chartContainer}>
-            <DailyWeightChartWidget />
+            {/* <DailyWeightChartWidget /> */}
           </View>
         </ScrollView>
         <View style={styles.navigationContainer}>
