@@ -7,28 +7,24 @@ import {
   ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { EXERCISE_LIST } from "../mock-data/exercise-list";
+import { MY_WORKOUTS } from "../mock-data/my-workouts";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ExerciseCard from "../components/exerciseCard";
 import React from 'react'
 
 const Workouts = () => {
-  const { category } = useLocalSearchParams();
   const router = useRouter();
 
   let content;
   if (
-    EXERCISE_LIST.filter((exercises) => exercises.exerciseCategory === category)
-      .length > 0
+    MY_WORKOUTS.workouts.length > 0
   ) {
     content = (
       <ScrollView>
-        {EXERCISE_LIST.filter(
-          (exercise) => exercise.exerciseCategory === category
-        )[0].exercise.map((item: any) => (
+        {MY_WORKOUTS.workouts.map((item: any) => (
           <TouchableOpacity key={item.id}>
-            {/* <ExerciseCard exerciseDetails={item} /> */}
+           <Text style={styles.text}>{item.name}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
