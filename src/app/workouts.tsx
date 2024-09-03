@@ -8,23 +8,23 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { MY_WORKOUTS } from "../mock-data/my-workouts";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import ExerciseCard from "../components/exerciseCard";
 import React from 'react'
+import WorkoutCard from "../components/workoutCard";
 
 const Workouts = () => {
   const router = useRouter();
 
   let content;
   if (
-    MY_WORKOUTS.workouts.length > 0
+    MY_WORKOUTS.length > 0
   ) {
     content = (
       <ScrollView>
-        {MY_WORKOUTS.workouts.map((item: any) => (
+        {MY_WORKOUTS.map((item: any) => (
           <TouchableOpacity key={item.id}>
-           <Text style={styles.text}>{item.name}</Text>
+           <WorkoutCard workoutDetails={item} />
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -36,7 +36,7 @@ const Workouts = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
-      <View style={styles.exerciseContainer}>
+      <View style={styles.myWorkoutsContainer}>
         <View style={styles.exerciseHeaderContainer}>
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back-circle" size={40} color="white" />
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
-  exerciseContainer: {
+  myWorkoutsContainer: {
     padding: 15,
     paddingTop: 60,
     height: "100%",
@@ -69,17 +69,9 @@ const styles = StyleSheet.create({
     color: "white",
     fontStyle: "italic",
   },
-  subheaderText: {
-    fontSize: 28,
-    color: "#319AE5",
-  },
   exercisesListContainerContainer: {
     height: "82%",
     marginBottom: 20,
-  },
-  text: {
-    color: "white",
-    fontSize: 18,
   },
 });
 

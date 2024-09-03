@@ -1,3 +1,5 @@
+import { Workout } from "../models/my-workouts";
+
 const exercise1 = {
   id: "1",
   name: "Push Ups",
@@ -58,65 +60,68 @@ const exercise4 = {
   ],
 };
 
-
-export const MY_WORKOUTS: any = {
-  workouts: [
-    {
-      id: "1",
-      name: "Getting Strong",
-      description: "Getting Strong Description",
-      exerises: [
-        {
-          type: "individual-set",
-          exercise: [exercise1],
-        },
-        {
-          type: "super-set",
-          exercise: [exercise2, exercise3],
-        },
-        {
-          type: "giant-set",
-          exercise: [exercise1, exercise4, exercise2],
-        },
-      ],
-    },
-    {
-      id: "2",
-      name: "15 Day Shredd",
-      description: "Getting Strong Description",
-      exerises: [
-        {
-          type: "individual-set",
-          exercise: [exercise1],
-        },
-        {
-          type: "super-set",
-          exercise: [exercise2, exercise3],
-        },
-        {
-          type: "giant-set",
-          exercise: [exercise1, exercise4, exercise2],
-        },
-      ],
-    },
-    {
-      id: "3",
-      name: "Glute Builder",
-      description: "Getting Strong Description",
-      exerises: [
-        {
-          type: "individual-set",
-          exercise: [exercise1],
-        },
-        {
-          type: "super-set",
-          exercise: [exercise2, exercise3],
-        },
-        {
-          type: "giant-set",
-          exercise: [exercise1, exercise4, exercise2],
-        },
-      ],
-    },
-  ],
-};
+export const MY_WORKOUTS: Workout[] = [
+  {
+    id: "1",
+    name: "Getting Strong",
+    description: "Getting Strong Description",
+    programImage: require("../../assets/images/chest.jpg"),
+    programType: "Strength Program",
+    programStructure: [
+      {
+        type: "individual-set",
+        exercise: [exercise1],
+      },
+      {
+        type: "super-set",
+        exercise: [exercise2, exercise3],
+      },
+      {
+        type: "giant-set",
+        exercise: [exercise1, exercise4, exercise2],
+      },
+    ],
+  },
+  {
+    id: "2",
+    name: "15 Day Shredd",
+    description: "Getting Strong Description",
+    programImage: require("../../assets/images/cardio.jpg"),
+    programType: "Fat Loss Program",
+    programStructure: [
+      {
+        type: "individual-set",
+        exercise: [exercise1],
+      },
+      {
+        type: "super-set",
+        exercise: [exercise2, exercise3],
+      },
+      {
+        type: "giant-set",
+        exercise: [exercise1, exercise4, exercise2],
+      },
+    ],
+  },
+  {
+    id: "3",
+    name: "Glute Builder",
+    description: "Getting Strong Description",
+    programImage: require("../../assets/images/legs-2.jpg"),
+    programType: "Muscle Building Program",
+    programStructure: [
+      {
+        type: "individual-set",
+        exercise: [exercise1],
+      },
+      {
+        type: "super-set",
+        exercise: [exercise2, exercise3],
+      },
+      {
+        type: "giant-set",
+        exercise: [exercise1, exercise4, exercise2],
+      },
+    ],
+  },
+];
