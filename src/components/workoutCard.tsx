@@ -1,18 +1,21 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
+import { Text, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 import React from "react";
 import { useRouter } from "expo-router";
+import { Workout } from "../models/my-workouts";
 
-const WorkoutCard = ({ workoutDetails }) => {
+const WorkoutCard = ({ workoutDetails }: { workoutDetails: Workout}) => {
   const router = useRouter();
 
+  let workoutDetailsParams = JSON.stringify(workoutDetails);
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => router.push({ pathname: "workoutRoutine", params: { workoutDetailsParams } })}>
       <ImageBackground source={workoutDetails.programImage} style={styles.card}>
         <LinearGradient
-          colors={["rgba(0, 0, 0, 1)", "rgba(0, 0, 0, 0)"]} // Horizontal gradient from black to transparent
-          start={{ x: 0, y: 0 }} // Start from the left (x=0) of the container
-          end={{ x: 1, y: 0 }} // End at the right (x=1) of the container
+          colors={["rgba(0, 0, 0, 1)", "rgba(0, 0, 0, 0)"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
           style={styles.gradient}
         >
           <Text style={styles.cardHeaderText}>{workoutDetails.name}</Text>

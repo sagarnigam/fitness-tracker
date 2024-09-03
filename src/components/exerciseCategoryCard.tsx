@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const ExerciseCategoryCard = ({ category, icon }) => {
+const ExerciseCategoryCard = ({ category, icon }: any) => {
   const router = useRouter();
 
   return (
