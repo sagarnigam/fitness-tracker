@@ -32,7 +32,7 @@ const exercise2 = {
 
 const exercise3 = {
   id: "3",
-  name: "Push Ups",
+  name: "Incline Press",
   description:
     "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
   muscles: ["Chest", "Triceps", "Shoulders"],
@@ -47,7 +47,7 @@ const exercise3 = {
 
 const exercise4 = {
   id: "4",
-  name: "Chest Dips",
+  name: "Barbell Press",
   description:
     "The push-up is a classic bodyweight exercise that targets the muscles of the upper body, particularly the chest, shoulders, and arms, while also engaging the core. It is one of the most effective and versatile exercises, suitable for all fitness levels, and can be performed virtually anywhere without the need for equipment.",
   muscles: ["Chest", "Triceps", "Shoulders"],
@@ -71,14 +71,20 @@ export const MY_WORKOUTS: Workout[] = [
       {
         type: "individual-set",
         exercise: [exercise1],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "super-set",
         exercise: [exercise2, exercise3],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "giant-set",
         exercise: [exercise1, exercise4, exercise2],
+        sets: 3,
+        reps: 12,
       },
     ],
   },
@@ -92,14 +98,20 @@ export const MY_WORKOUTS: Workout[] = [
       {
         type: "individual-set",
         exercise: [exercise1],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "super-set",
         exercise: [exercise2, exercise3],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "giant-set",
         exercise: [exercise1, exercise4, exercise2],
+        sets: 3,
+        reps: 12,
       },
     ],
   },
@@ -113,14 +125,20 @@ export const MY_WORKOUTS: Workout[] = [
       {
         type: "individual-set",
         exercise: [exercise1],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "super-set",
         exercise: [exercise2, exercise3],
+        sets: 3,
+        reps: 12,
       },
       {
         type: "giant-set",
         exercise: [exercise1, exercise4, exercise2],
+        sets: 3,
+        reps: 12,
       },
     ],
   },

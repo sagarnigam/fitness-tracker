@@ -11,5 +11,7 @@ export interface Workout {
 
 export interface Exercises {
     type: string;
-    exercise: Exercise[]
+    exercise: Exercise[],
+    sets: number,
+    reps: number,
 }
