@@ -6,7 +6,7 @@ export interface Workout {
     description: string;
     programImage: string;
     programType: string;
-    programStructure: Exercises[]
+    programStructure: any
 }
 
 export interface Exercises {

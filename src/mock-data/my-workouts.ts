@@ -69,76 +69,556 @@ export const MY_WORKOUTS: Workout[] = [
     programType: "Strength Program",
     programStructure: [
       {
-        type: "individual-set",
-        exercise: [exercise1],
-        sets: 3,
-        reps: 12,
+        day: 1,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise1],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise2, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
       },
       {
-        type: "super-set",
-        exercise: [exercise2, exercise3],
-        sets: 3,
-        reps: 12,
+        day: 2,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
       },
       {
-        type: "giant-set",
-        exercise: [exercise1, exercise4, exercise2],
-        sets: 3,
-        reps: 12,
-      },
-    ],
-  },
-  {
-    id: "2",
-    name: "15 Day Shredd",
-    description: "Getting Strong Description",
-    programImage: require("../../assets/images/cardio.jpg"),
-    programType: "Fat Loss Program",
-    programStructure: [
-      {
-        type: "individual-set",
-        exercise: [exercise1],
-        sets: 3,
-        reps: 12,
-      },
-      {
-        type: "super-set",
-        exercise: [exercise2, exercise3],
-        sets: 3,
-        reps: 12,
+        day: 3,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
       },
       {
-        type: "giant-set",
-        exercise: [exercise1, exercise4, exercise2],
-        sets: 3,
-        reps: 12,
-      },
-    ],
-  },
-  {
-    id: "3",
-    name: "Glute Builder",
-    description: "Getting Strong Description",
-    programImage: require("../../assets/images/legs-2.jpg"),
-    programType: "Muscle Building Program",
-    programStructure: [
-      {
-        type: "individual-set",
-        exercise: [exercise1],
-        sets: 3,
-        reps: 12,
-      },
-      {
-        type: "super-set",
-        exercise: [exercise2, exercise3],
-        sets: 3,
-        reps: 12,
+        day: 4,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
       },
       {
-        type: "giant-set",
-        exercise: [exercise1, exercise4, exercise2],
-        sets: 3,
-        reps: 12,
+        day: 5,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 6,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 7,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 8,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 9,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 10,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 11,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 12,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 13,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 14,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 15,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 16,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 17,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 18,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 19,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 20,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 21,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 22,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 23,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
+      },
+      {
+        day: 24,
+        exercises: [
+          {
+            type: "individual-set",
+            exercise: [exercise2],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "super-set",
+            exercise: [exercise1, exercise3],
+            sets: 3,
+            reps: 12,
+          },
+          {
+            type: "giant-set",
+            exercise: [exercise1, exercise4, exercise2],
+            sets: 3,
+            reps: 12,
+          },
+        ],
       },
     ],
   },

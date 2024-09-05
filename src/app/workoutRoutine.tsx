@@ -30,28 +30,15 @@ const WorkoutRoutine = () => {
           <Text style={styles.subheaderText}>{programData.programType}</Text>
         </View>
         <View style={styles.exercisesListContainerContainer}>
+          <Text style={styles.listHeaderText}>Workout Plan</Text>
           <ScrollView>
-            {programData.programStructure.map((exercises: any) =>
-              exercises.exercise.map((exercise: any) => (
-                <View
-                  style={[
-                    {
-                      paddingLeft: 6,
-                      backgroundColor: exercises.type === 'individual-set' ? 'white' : exercises.type === 'super-set' ? '#319AE5' : '#63BFF7',
-                      marginVertical: 8,
-                      borderRadius: 20,
-                    },
-                  ]}
-                >
-                  <View style={styles.card}>
-                    <Text style={styles.cardHeaderText}>{exercise.name}</Text>
-                    <Text style={styles.categoryText}>
-                      Sets: {exercises.sets}, Reps: {exercises.reps}
-                    </Text>
-                  </View>
+            {programData.programStructure.map((day: any) => (
+              <TouchableOpacity key={day.day}>
+                <View style={styles.dayCard}>
+                  <Text style={styles.dayCategoryText}>Day {day.day}</Text>
                 </View>
-              ))
-            )}
+              </TouchableOpacity>
+            ))}
           </ScrollView>
         </View>
       </View>
@@ -87,6 +74,12 @@ const styles = StyleSheet.create({
     height: "82%",
     marginBottom: 20,
   },
+  listHeaderText: {
+    fontSize: 24,
+    fontStyle: "italic",
+    color: "white",
+    marginBottom: 5,
+  },
   card: {
     alignItems: "center",
     backgroundColor: "#1E2A38",
@@ -104,6 +97,47 @@ const styles = StyleSheet.create({
     color: "#319AE5",
     fontStyle: "italic",
   },
+
+  dayCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#1E2A38",
+    marginVertical: 8,
+    borderRadius: 20,
+    overflow: "hidden",
+    padding: 15,
+    paddingLeft: 20,
+  },
+  dayCategoryText: {
+    fontSize: 18,
+    color: "#ffffff",
+    fontStyle: "italic",
+    fontWeight: "bold",
+  },
 });
 
 export default WorkoutRoutine;
+
+{
+  /* {programData.programStructure.map((exercises: any) =>
+              exercises.exercise.map((exercise: any) => (
+                <View
+                  style={[
+                    {
+                      paddingLeft: 6,
+                      backgroundColor: exercises.type === 'individual-set' ? 'white' : exercises.type === 'super-set' ? '#319AE5' : '#63BFF7',
+                      marginVertical: 8,
+                      borderRadius: 20,
+                    },
+                  ]}
+                >
+                  <View style={styles.card}>
+                    <Text style={styles.cardHeaderText}>{exercise.name}</Text>
+                    <Text style={styles.categoryText}>
+                      Sets: {exercises.sets}, Reps: {exercises.reps}
+                    </Text>
+                  </View>
+                </View>
+              ))
+            )} */
+}
