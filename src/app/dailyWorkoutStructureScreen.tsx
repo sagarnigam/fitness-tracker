@@ -1,65 +1,44 @@
-import {
-  View,
-  Text,
-  StyleSheet,
+import { View, Text,  StyleSheet,
   SafeAreaView,
   TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import React from "react";
+  ScrollView, } from 'react-native'
+import React from 'react'
 import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { MY_WORKOUTS } from "../mock-data/my-workouts";
 
-const WorkoutRoutine = () => {
-  const { workoutDetailsParams } = useLocalSearchParams();
-  const programData = workoutDetailsParams
-    ? JSON.parse(workoutDetailsParams)
-    : null;
+const DailyWorkoutStuctureScreen = () => {
+  const programDay = useLocalSearchParams();
+
   const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
-      <View style={styles.workoutProgramsContainer}>
+      <View style={styles.dailyWorkoutScreenContainer}>
         <View style={styles.headerContainer}>
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back-circle" size={40} color="white" />
           </TouchableOpacity>
-          <Text style={styles.headerText}>{programData.name}</Text>
-          <Text style={styles.subheaderText}>{programData.programType}</Text>
+          <Text style={styles.headerText}>Day {programDay.day}</Text>
         </View>
         <View style={styles.exercisesListContainerContainer}>
-          <Text style={styles.listHeaderText}>Workout Plan</Text>
           <ScrollView>
-            {programData.programStructure.map((day: any) => (
-              <TouchableOpacity
-                key={day.day}
-                onPress={() =>
-                  router.push({
-                    pathname: "dailyWorkoutStructureScreen",
-                    params: { day: day.day},
-                  })
-                }
-              >
-                <View style={styles.dayCard}>
-                  <Text style={styles.dayCategoryText}>Day {day.day}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
+            
           </ScrollView>
         </View>
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     height: "100%",
     width: "100%",
   },
-  workoutProgramsContainer: {
+  dailyWorkoutScreenContainer: {
     padding: 15,
     paddingTop: 60,
     height: "100%",
@@ -82,49 +61,28 @@ const styles = StyleSheet.create({
     height: "82%",
     marginBottom: 20,
   },
-  listHeaderText: {
-    fontSize: 24,
-    fontStyle: "italic",
-    color: "white",
-    marginBottom: 5,
-  },
-  // card: {
-  //   alignItems: "center",
-  //   backgroundColor: "#1E2A38",
-  //   borderRadius: 20,
-  //   padding: 15,
-  // },
-  // cardHeaderText: {
-  //   fontSize: 18,
-  //   color: "#ffffff",
-  //   fontStyle: "italic",
-  //   fontWeight: "400",
-  // },
-  // categoryText: {
-  //   fontSize: 14,
-  //   color: "#319AE5",
-  //   fontStyle: "italic",
-  // },
-
-  dayCard: {
-    flexDirection: "row",
+  card: {
     alignItems: "center",
     backgroundColor: "#1E2A38",
-    marginVertical: 8,
     borderRadius: 20,
-    overflow: "hidden",
     padding: 15,
-    paddingLeft: 20,
   },
-  dayCategoryText: {
+  cardHeaderText: {
     fontSize: 18,
     color: "#ffffff",
     fontStyle: "italic",
-    fontWeight: "bold",
+    fontWeight: "400",
+  },
+  categoryText: {
+    fontSize: 14,
+    color: "#319AE5",
+    fontStyle: "italic",
   },
 });
 
-export default WorkoutRoutine;
+
+export default DailyWorkoutStuctureScreen
+
 
 {
   /* {programData.programStructure.map((exercises: any) =>
