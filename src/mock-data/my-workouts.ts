@@ -69,7 +69,7 @@ export const MY_WORKOUTS: Workout[] = [
     programType: "Strength Program",
     programStructure: [
       {
-        day: 1,
+        day: "1",
         exercises: [
           {
             type: "individual-set",
@@ -92,7 +92,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 2,
+        day: "2",
         exercises: [
           {
             type: "individual-set",
@@ -115,7 +115,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 3,
+        day: "3",
         exercises: [
           {
             type: "individual-set",
@@ -138,7 +138,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 4,
+        day: "4",
         exercises: [
           {
             type: "individual-set",
@@ -161,7 +161,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 5,
+        day: "5",
         exercises: [
           {
             type: "individual-set",
@@ -184,7 +184,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 6,
+        day: "6",
         exercises: [
           {
             type: "individual-set",
@@ -207,7 +207,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 7,
+        day: "7",
         exercises: [
           {
             type: "individual-set",
@@ -230,7 +230,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 8,
+        day: "8",
         exercises: [
           {
             type: "individual-set",
@@ -253,7 +253,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 9,
+        day: "9",
         exercises: [
           {
             type: "individual-set",
@@ -276,7 +276,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 10,
+        day: "10",
         exercises: [
           {
             type: "individual-set",
@@ -299,7 +299,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 11,
+        day: "11",
         exercises: [
           {
             type: "individual-set",
@@ -322,7 +322,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 12,
+        day: "12",
         exercises: [
           {
             type: "individual-set",
@@ -345,7 +345,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 13,
+        day: "13",
         exercises: [
           {
             type: "individual-set",
@@ -368,7 +368,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 14,
+        day: "14",
         exercises: [
           {
             type: "individual-set",
@@ -391,7 +391,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 15,
+        day: "15",
         exercises: [
           {
             type: "individual-set",
@@ -414,7 +414,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 16,
+        day: "16",
         exercises: [
           {
             type: "individual-set",
@@ -437,7 +437,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 17,
+        day: "17",
         exercises: [
           {
             type: "individual-set",
@@ -460,7 +460,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 18,
+        day: "18",
         exercises: [
           {
             type: "individual-set",
@@ -483,7 +483,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 19,
+        day: "19",
         exercises: [
           {
             type: "individual-set",
@@ -506,7 +506,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 20,
+        day: "20",
         exercises: [
           {
             type: "individual-set",
@@ -529,7 +529,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 21,
+        day: "21",
         exercises: [
           {
             type: "individual-set",
@@ -552,7 +552,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 22,
+        day: "22",
         exercises: [
           {
             type: "individual-set",
@@ -575,7 +575,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 23,
+        day: "23",
         exercises: [
           {
             type: "individual-set",
@@ -598,7 +598,7 @@ export const MY_WORKOUTS: Workout[] = [
         ],
       },
       {
-        day: 24,
+        day: "24",
         exercises: [
           {
             type: "individual-set",
