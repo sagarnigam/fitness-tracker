@@ -2,32 +2,38 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 
 const RoutineExerciseCard = ({ exercisesArray }) => {
+  const reps = exercisesArray.reps;
+  const sets = exercisesArray.sets;
+  const exerciseType = exercisesArray.type;
+
   return (
     <ScrollView>
-      {exercisesArray.exercise.map((exercise) => (
-        <View
-          style={[
-            {
-              paddingLeft: 6,
-              backgroundColor:
-                exercise.type === "individual-set"
-                  ? "white"
-                  : exercise.type === "super-set"
-                  ? "#319AE5"
-                  : "#63BFF7",
-              marginVertical: 8,
-              borderRadius: 20,
-            },
-          ]}
-        >
-          <View style={styles.card}>
-            <Text style={styles.cardHeaderText}>{exercise.name}</Text>
-            <Text style={styles.categoryText}>
-              Sets: {exercise.sets}, Reps: {exercise.reps}
-            </Text>
-          </View>
+      <View
+        style={[
+          {
+            paddingLeft: 6,
+            backgroundColor:
+              exerciseType === "individual-set"
+                ? "white"
+                : exerciseType === "super-set"
+                ? "#319AE5"
+                : "#63BFF7",
+            marginVertical: 8,
+            borderRadius: 20,
+          },
+        ]}
+      >
+        <View style={styles.card}>
+          {exercisesArray.exercise.map((exercise) => (
+            <View style={styles.cardContent}>
+              <Text style={styles.cardHeaderText}>{exercise.name}</Text>
+              <Text style={styles.categoryText}>
+                Sets: {sets}, Reps: {reps}
+              </Text>
+            </View>
+          ))}
         </View>
-      ))}
+      </View>
     </ScrollView>
   );
 };
@@ -37,7 +43,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#1E2A38",
     borderRadius: 20,
-    padding: 15,
+    padding: 10,
+  },
+  cardContent: {
+    padding: 5,
   },
   cardHeaderText: {
     fontSize: 18,
