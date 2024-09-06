@@ -67,6 +67,7 @@ export const MY_WORKOUTS: Workout[] = [
     description: "Getting Strong Description",
     programImage: require("../../assets/images/chest.jpg"),
     programType: "Strength Program",
+    programLength: 24,
     programStructure: [
       {
         day: "1",
