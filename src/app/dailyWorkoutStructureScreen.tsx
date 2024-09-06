@@ -11,10 +11,14 @@ import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { MY_WORKOUTS } from "../mock-data/my-workouts";
+import RoutineExerciseCard from "../components/routineExerciseCard";
 
 const DailyWorkoutStuctureScreen = () => {
   const workoutProgramData = useLocalSearchParams();
   const router = useRouter();
+
+  let program = MY_WORKOUTS.filter((program) => program.id === workoutProgramData.programId)[0];
+  let workoutDayDetails = program.programStructure.filter((selectDay) => selectDay.day === workoutProgramData.day)[0];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -28,36 +32,9 @@ const DailyWorkoutStuctureScreen = () => {
         </View>
         <View style={styles.exercisesListContainerContainer}>
           <ScrollView>
-            {MY_WORKOUTS.filter(
-              (program) => program.id === workoutProgramData.programId
-            )[0]
-              .programStructure.filter(
-                (selectDay) => selectDay.day === workoutProgramData.day
-              )[0]
-              .exercises.map((exercise) => (
-                <View
-                  style={[
-                    {
-                      paddingLeft: 6,
-                      backgroundColor:
-                        exercise.type === "individual-set"
-                          ? "white"
-                          : exercise.type === "super-set"
-                          ? "#319AE5"
-                          : "#63BFF7",
-                      marginVertical: 8,
-                      borderRadius: 20,
-                    },
-                  ]}
-                >
-                  <View style={styles.card}>
-                    <Text style={styles.cardHeaderText}>{exercise.name}</Text>
-                    <Text style={styles.categoryText}>
-                      Sets: {exercise.sets}, Reps: {exercise.reps}
-                    </Text>
-                  </View>
-                </View>
-              ))}
+            {workoutDayDetails.exercises.map((exercisesArray) =>
+                <RoutineExerciseCard exercisesArray={exercisesArray}/>
+              )}
           </ScrollView>
         </View>
       </View>
@@ -92,23 +69,6 @@ const styles = StyleSheet.create({
   exercisesListContainerContainer: {
     height: "82%",
     marginBottom: 20,
-  },
-  card: {
-    alignItems: "center",
-    backgroundColor: "#1E2A38",
-    borderRadius: 20,
-    padding: 15,
-  },
-  cardHeaderText: {
-    fontSize: 18,
-    color: "#ffffff",
-    fontStyle: "italic",
-    fontWeight: "400",
-  },
-  categoryText: {
-    fontSize: 14,
-    color: "#319AE5",
-    fontStyle: "italic",
   },
 });
 
