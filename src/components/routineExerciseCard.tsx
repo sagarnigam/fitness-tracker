@@ -24,8 +24,8 @@ const RoutineExerciseCard = ({ exercisesArray }) => {
         ]}
       >
         <View style={styles.card}>
-          {exercisesArray.exercise.map((exercise) => (
-            <View style={styles.cardContent}>
+          {exercisesArray.exercise.map((exercise, index) => (
+            <View style={styles.cardContent} key={index}>
               <Text style={styles.cardHeaderText}>{exercise.name}</Text>
               <Text style={styles.categoryText}>
                 Sets: {sets}, Reps: {reps}
