@@ -32,8 +32,8 @@ const DailyWorkoutStuctureScreen = () => {
         </View>
         <View style={styles.exercisesListContainerContainer}>
           <ScrollView>
-            {workoutDayDetails.exercises.map((exercisesArray) =>
-                <RoutineExerciseCard exercisesArray={exercisesArray}/>
+            {workoutDayDetails.exercises.map((exercisesArray, index) =>
+                <RoutineExerciseCard exercisesArray={exercisesArray} key={index}/>
               )}
           </ScrollView>
         </View>
