@@ -20,7 +20,7 @@ export default function Index() {
 
   // const configureGoogle = () => {
   //   GoogleSignin.configure({
-  //     webClientId: "94632001537-ancfdnlfiq4vjouhe1tubl3upc8vutc4.apps.googleusercontent.com", // client ID of type WEB for your server. Required to get the `idToken` on the user object, and for offline access.
+  //     webClientId: ""
   //     scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
   //   });
 
