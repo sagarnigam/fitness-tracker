@@ -18,37 +18,37 @@ import {
 export default function Index() {
   const router = useRouter();
 
-  const configureGoogle = () => {
-    GoogleSignin.configure({
-      webClientId: "94632001537-ancfdnlfiq4vjouhe1tubl3upc8vutc4.apps.googleusercontent.com", // client ID of type WEB for your server. Required to get the `idToken` on the user object, and for offline access.
-      scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
-    });
+  // const configureGoogle = () => {
+  //   GoogleSignin.configure({
+  //     webClientId: "94632001537-ancfdnlfiq4vjouhe1tubl3upc8vutc4.apps.googleusercontent.com", // client ID of type WEB for your server. Required to get the `idToken` on the user object, and for offline access.
+  //     scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
+  //   });
 
-    signIn();
-  };
+  //   signIn();
+  // };
 
-  const signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const response = await GoogleSignin.signIn();
-      console.log(JSON.stringify(response));
-    } catch (error) {
-      if (isErrorWithCode(error)) {
-        switch (error.code) {
-          case statusCodes.IN_PROGRESS:
-            // operation (eg. sign in) already in progress
-            break;
-          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-            // Android only, play services not available or outdated
-            break;
-          default:
-          // some other error happened
-        }
-      } else {
-        // an error that's not related to google sign in occurred
-      }
-    }
-  };
+  // const signIn = async () => {
+  //   try {
+  //     await GoogleSignin.hasPlayServices();
+  //     const response = await GoogleSignin.signIn();
+  //     console.log(JSON.stringify(response));
+  //   } catch (error) {
+  //     if (isErrorWithCode(error)) {
+  //       switch (error.code) {
+  //         case statusCodes.IN_PROGRESS:
+  //           // operation (eg. sign in) already in progress
+  //           break;
+  //         case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+  //           // Android only, play services not available or outdated
+  //           break;
+  //         default:
+  //         // some other error happened
+  //       }
+  //     } else {
+  //       // an error that's not related to google sign in occurred
+  //     }
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
@@ -68,20 +68,20 @@ export default function Index() {
           <Text style={styles.homeText}>
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() => router.push("home")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-          </TouchableOpacity> */}
-          <GoogleSigninButton
+          </TouchableOpacity>
+          {/* <GoogleSigninButton
             size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => {
               configureGoogle();
             }}
             disabled={false}
-          />
+          /> */}
         </Animated.View>
       </ImageBackground>
     </View>

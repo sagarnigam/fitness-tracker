@@ -8,13 +8,6 @@ export default function _layout() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="index" options={{}} />
-      <Stack.Screen name="home" options={{}} />
-      <Stack.Screen name="exerciseCategoryHome" options={{}} />
-      <Stack.Screen name="profile" options={{}} />
-      <Stack.Screen name="exerciseDetailsScreen" options={{
-        presentation: 'fullScreenModal',
-      }} />
     </Stack>
   );
 }
