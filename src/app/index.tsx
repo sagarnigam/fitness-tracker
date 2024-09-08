@@ -69,7 +69,7 @@ export default function Index() {
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
           <TouchableOpacity
-            onPress={() => router.push("home")}
+            onPress={() => router.push("(tabs)")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>

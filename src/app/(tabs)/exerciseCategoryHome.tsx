@@ -8,9 +8,9 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import NavigationBar from "../components/navigationBar";
-import { EXERCISE_CATEGORY } from "../mock-data/exercise-list";
-import ExerciseCategoryCard from "../components/exerciseCategoryCard";
+import NavigationBar from "../../components/navigationBar";
+import { EXERCISE_CATEGORY } from "../../mock-data/exercise-list";
+import ExerciseCategoryCard from "../../components/exerciseCategoryCard";
 import { useRouter } from "expo-router";
 
 export default function ExerciseCategoryHome() {
@@ -38,7 +38,7 @@ export default function ExerciseCategoryHome() {
             <Text style={styles.text}>My Workouts</Text>
           </TouchableOpacity>
         </View>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
       </View>
     </SafeAreaView>
   );

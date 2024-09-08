@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
-import NavigationBar from "../components/navigationBar";
+import NavigationBar from "../../components/navigationBar";
 import { StatusBar } from "expo-status-bar";
-import CaloriesWidget from "../components/caloriesWidget";
-import StepsWidget from "../components/stepsWidget";
-import WaterWidget from "../components/waterWidget";
-import DailyWeightChartWidget from "../components/dailyWeightChartWidget";
+import CaloriesWidget from "../../components/caloriesWidget";
+import StepsWidget from "../../components/stepsWidget";
+import WaterWidget from "../../components/waterWidget";
+import DailyWeightChartWidget from "../../components/dailyWeightChartWidget";
 
 export default function home() {
   return (
@@ -29,9 +29,9 @@ export default function home() {
             {/* <DailyWeightChartWidget /> */}
           </View>
         </ScrollView>
-        <View style={styles.navigationContainer}>
+        {/* <View style={styles.navigationContainer}>
           <NavigationBar />
-        </View>
+        </View> */}
       </View>
     </SafeAreaView>
   );
