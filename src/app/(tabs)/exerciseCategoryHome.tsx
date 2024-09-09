@@ -37,7 +37,6 @@ export default function ExerciseCategoryHome() {
             <Text style={styles.text}>My Workouts</Text>
           </TouchableOpacity>
         </View>
-        {/* <NavigationBar /> */}
       </View>
     </SafeAreaView>
   );
