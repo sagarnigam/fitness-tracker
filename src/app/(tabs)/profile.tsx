@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
   },
-  profileDetailsContainer: {},
   text: {
     color: "white",
     fontSize: 18,
