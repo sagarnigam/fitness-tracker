@@ -15,8 +15,8 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name={"home"} size={26} color="white" />
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons name={"home"} size={26} color={focused ? '#63BFF7' : 'white'}  />
           ),
         }}
       />
@@ -24,8 +24,8 @@ export default function TabLayout() {
         name="exerciseCategoryHome"
         options={{
           title: "Exercise",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name={"barbell"} size={26} color="white" />
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons name={"barbell"} size={26} color={focused ? '#63BFF7' : 'white'} />
           ),
         }}
       />
@@ -33,8 +33,8 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name={"person"} size={26} color="white" />
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons name={"person"} size={26} color={focused ? '#63BFF7' : 'white'} />
           ),
         }}
       />
@@ -53,5 +53,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginBottom: 10,
     borderColor: 'transparent',
+    shadowColor: 'transparent',
   },
 });
