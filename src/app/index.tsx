@@ -20,7 +20,7 @@ export default function Index() {
 
   const configureGoogle = () => {
     GoogleSignin.configure({
-      webClientId: "94632001537-j2i0t4rphlk40oudlfk0dk9fsj46g8to.apps.googleusercontent.com",
+      webClientId: "",
       scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
     });
 
@@ -32,6 +32,7 @@ export default function Index() {
       await GoogleSignin.hasPlayServices();
       const response = await GoogleSignin.signIn();
       console.log(JSON.stringify(response));
+      router.push("(tabs)");
     } catch (error) {
       if (error) {
         switch (error) {

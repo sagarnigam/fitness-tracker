@@ -2,5 +2,5 @@
   <string name="app_name">fitness-tracker</string>
   <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
   <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
-  <string name="server_client_id">94632001537-3itpr4854att5cuat2flv3i1ncce34fa.apps.googleusercontent.com</string>
+  <string name="server_client_id"></string>
 </resources>
