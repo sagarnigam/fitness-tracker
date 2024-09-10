@@ -26,12 +26,9 @@ export default function home() {
             </View>
           </View>
           <View style={styles.chartContainer}>
-            {/* <DailyWeightChartWidget /> */}
+            <DailyWeightChartWidget />
           </View>
         </ScrollView>
-        {/* <View style={styles.navigationContainer}>
-          <NavigationBar />
-        </View> */}
       </View>
     </SafeAreaView>
   );
@@ -81,7 +78,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
   },
-  chartContainer: {},
+  chartContainer: {
+    width: "100%",
+  },
   text: {
     color: "white",
     fontSize: 18,
