@@ -20,7 +20,7 @@ export default function Index() {
 
   const configureGoogle = () => {
     GoogleSignin.configure({
-      webClientId: "94632001537-3itpr4854att5cuat2flv3i1ncce34fa.apps.googleusercontent.com",
+      webClientId: "94632001537-j2i0t4rphlk40oudlfk0dk9fsj46g8to.apps.googleusercontent.com",
       scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
     });
 
