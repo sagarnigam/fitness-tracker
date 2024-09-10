@@ -18,37 +18,38 @@ import {
 export default function Index() {
   const router = useRouter();
 
-  // const configureGoogle = () => {
-  //   GoogleSignin.configure({
-  //     webClientId: ""
-  //     scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
-  //   });
+  const configureGoogle = () => {
+    GoogleSignin.configure({
+      webClientId: "94632001537-3itpr4854att5cuat2flv3i1ncce34fa.apps.googleusercontent.com",
+      scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
+    });
 
-  //   signIn();
-  // };
+    signIn();
+  };
 
-  // const signIn = async () => {
-  //   try {
-  //     await GoogleSignin.hasPlayServices();
-  //     const response = await GoogleSignin.signIn();
-  //     console.log(JSON.stringify(response));
-  //   } catch (error) {
-  //     if (isErrorWithCode(error)) {
-  //       switch (error.code) {
-  //         case statusCodes.IN_PROGRESS:
-  //           // operation (eg. sign in) already in progress
-  //           break;
-  //         case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-  //           // Android only, play services not available or outdated
-  //           break;
-  //         default:
-  //         // some other error happened
-  //       }
-  //     } else {
-  //       // an error that's not related to google sign in occurred
-  //     }
-  //   }
-  // };
+  const signIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const response = await GoogleSignin.signIn();
+      console.log(JSON.stringify(response));
+    } catch (error) {
+      if (error) {
+        switch (error) {
+          case statusCodes.IN_PROGRESS:
+            console.log(error);
+            break;
+          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+            console.log(error);
+            break;
+          default:
+            console.log(error);
+        }
+      } else {
+        console.log(error);
+        
+      }
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -68,20 +69,20 @@ export default function Index() {
           <Text style={styles.homeText}>
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => router.push("(tabs)")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-          </TouchableOpacity>
-          {/* <GoogleSigninButton
+          </TouchableOpacity> */}
+          <GoogleSigninButton
             size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => {
               configureGoogle();
             }}
             disabled={false}
-          /> */}
+          />
         </Animated.View>
       </ImageBackground>
     </View>
