@@ -36,7 +36,7 @@ const DailyWeightChartWidget = () => {
       <LineChart
         style={{marginLeft: - 45}}
         data={data}
-        width={screenWidth + 45}
+        width={screenWidth + 55}
         height={256}
         verticalLabelRotation={0}
         chartConfig={chartConfig}
