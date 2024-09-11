@@ -70,20 +70,20 @@ export default function Index() {
           <Text style={styles.homeText}>
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() => router.push("(tabs)")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-          </TouchableOpacity> */}
-          <GoogleSigninButton
+          </TouchableOpacity>
+          {/* <GoogleSigninButton
             size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => {
               configureGoogle();
             }}
             disabled={false}
-          />
+          /> */}
         </Animated.View>
       </ImageBackground>
     </View>
