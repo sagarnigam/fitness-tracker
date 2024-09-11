@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { Dimensions } from "react-native";
 import { LineChart } from "react-native-chart-kit";
+import { Svg, Text as SvgText } from "react-native-svg";
 
 const DailyWeightChartWidget = () => {
   const screenWidth = Dimensions.get("window").width;
@@ -15,6 +16,11 @@ const DailyWeightChartWidget = () => {
     strokeWidth: 5, // optional, default 3
     barPercentage: 0.5,
     useShadowColorFromDataset: true, // optional
+    propsForDots: {
+      r: "6",
+      strokeWidth: "2",
+      stroke: "#ffa726",
+    },
   };
 
   const data = {
@@ -27,6 +33,7 @@ const DailyWeightChartWidget = () => {
       },
     ],
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
