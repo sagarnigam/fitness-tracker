@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     marginTop: '63.5%',
     flexDirection: "row",
     justifyContent: "space-around",
-    backgroundColor: "red",
+    backgroundColor: "#ff4d4d",
     borderRadius: 15,
     width: "100%",
     marginBottom: 10,
