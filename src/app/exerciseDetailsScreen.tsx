@@ -5,16 +5,27 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from "react-native";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function exerciseDetailsScreen() {
   const { exerciseDetails } = useLocalSearchParams();
   const exerciseData = exerciseDetails ? JSON.parse(exerciseDetails) : null;
   const router = useRouter();
+
+  const [playing, setPlaying] = useState(false);
+
+  const onStateChange = useCallback((state: any) => {
+    if (state === "ended") {
+      setPlaying(false);
+      Alert.alert("video has finished playing!");
+    }
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -27,6 +38,15 @@ export default function exerciseDetailsScreen() {
           <Text style={styles.headerText}>{exerciseData.name}</Text>
         </View>
         <ScrollView>
+          <View style={styles.youtubeVideoContainer}>
+            <YoutubePlayer
+              
+              height={200}
+              play={playing}
+              videoId={"iee2TATGMyI"}
+              onChangeState={onStateChange}
+            />
+          </View>
           <View style={[styles.card]}>
             <Text style={styles.subheaderText}>Description</Text>
             <Text style={styles.text}>{exerciseData.description}</Text>
@@ -37,9 +57,13 @@ export default function exerciseDetailsScreen() {
           </View>
           <View style={[styles.card]}>
             <Text style={styles.subheaderText}>Instructions</Text>
-            {exerciseData.instructions.map((instruction: string, index: number) => (
-              <Text key={index} style={[styles.text, { marginBottom: 15,}]}>{index + 1}. {instruction}</Text>
-            ))}
+            {exerciseData.instructions.map(
+              (instruction: string, index: number) => (
+                <Text key={index} style={[styles.text, { marginBottom: 15 }]}>
+                  {index + 1}. {instruction}
+                </Text>
+              )
+            )}
           </View>
         </ScrollView>
       </View>
@@ -72,6 +96,10 @@ const styles = StyleSheet.create({
     color: "#319AE5",
     fontStyle: "italic",
     fontWeight: "bold",
+    marginBottom: 10,
+  },
+  youtubeVideoContainer:{
+    borderRadius: 25,
     marginBottom: 10,
   },
   card: {
