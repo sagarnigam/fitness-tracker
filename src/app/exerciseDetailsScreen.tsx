@@ -43,7 +43,7 @@ export default function exerciseDetailsScreen() {
               
               height={200}
               play={playing}
-              videoId={"iee2TATGMyI"}
+              videoId={"PPmvh7gBTi0"}
               onChangeState={onStateChange}
             />
           </View>
