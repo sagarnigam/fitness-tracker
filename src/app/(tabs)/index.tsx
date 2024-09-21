@@ -1,13 +1,34 @@
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import React from "react";
-import NavigationBar from "../../components/navigationBar";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import CaloriesWidget from "../../components/caloriesWidget";
 import StepsWidget from "../../components/stepsWidget";
 import WaterWidget from "../../components/waterWidget";
 import DailyWeightChartWidget from "../../components/dailyWeightChartWidget";
+import { getExercises } from "../../services/exerciseService";
 
 export default function home() {
+  const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Fetch exercises when the component mounts
+    const fetchExercises = async () => {
+      try {
+        const data = await getExercises();
+        setExercises(data);
+        console.log(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchExercises();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
