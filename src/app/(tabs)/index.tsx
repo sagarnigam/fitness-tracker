@@ -5,29 +5,103 @@ import CaloriesWidget from "../../components/caloriesWidget";
 import StepsWidget from "../../components/stepsWidget";
 import WaterWidget from "../../components/waterWidget";
 import DailyWeightChartWidget from "../../components/dailyWeightChartWidget";
-import { getExercises } from "../../services/exerciseService";
+import GoogleFit, { Scopes } from "react-native-google-fit";
+// import { getExercises } from "../../services/exerciseService";
 
 export default function home() {
-  const [exercises, setExercises] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  //================================================================================================
+  // const [exercises, setExercises] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Fetch exercises when the component mounts
-    const fetchExercises = async () => {
-      try {
-        const data = await getExercises();
-        setExercises(data);
-        console.log(data);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   // Fetch exercises when the component mounts
+  //   const fetchExercises = async () => {
+  //     try {
+  //       const data = await getExercises();
+  //       setExercises(data);
+  //       console.log(data);
+  //     } catch (err: any) {
+  //       setError(err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchExercises();
-  }, []);
+  //   fetchExercises();
+  // }, []);
+
+  //================================================================================================
+  // Fitness api functions
+
+  // let [dailySteps, setdailySteps] = useState(0);
+  // let [loading, setLoading] = useState(true);
+
+  // const options = {
+  //   scopes: [
+  //     Scopes.FITNESS_ACTIVITY_READ,
+  //     Scopes.FITNESS_ACTIVITY_WRITE,
+  //     Scopes.FITNESS_BODY_READ,
+  //     Scopes.FITNESS_BODY_WRITE,
+  //     Scopes.FITNESS_BLOOD_PRESSURE_READ,
+  //     Scopes.FITNESS_BLOOD_PRESSURE_WRITE,
+  //     Scopes.FITNESS_BLOOD_GLUCOSE_READ,
+  //     Scopes.FITNESS_BLOOD_GLUCOSE_WRITE,
+  //     Scopes.FITNESS_NUTRITION_WRITE,
+  //     Scopes.FITNESS_SLEEP_READ,
+  //   ],
+  // };
+
+  // GoogleFit.checkIsAuthorized().then(() => {
+  //   let authorized = GoogleFit.isAuthorized;
+  //   console.log(authorized);
+  //   if (authorized) {
+  //     fetchStepsData(opt);
+  //   } else {
+  //     GoogleFit.authorize(options)
+  //       .then((authResult) => {
+  //         if (authResult.success) {
+  //           console.log("AUTH_SUCCESS");
+  //         } else {
+  //           console.log("AUTH_DENIED " + authResult.message);
+  //         }
+  //       })
+  //       .catch(() => {
+  //         console.log("AUTH_ERROR");
+  //       });
+  //   }
+  // });
+
+  // let today = new Date();
+  // let lastWeekDate = new Date(
+  //   today.getFullYear(),
+  //   today.getMonth(),
+  //   today.getDate() - 8
+  // );
+
+  // const opt = {
+  //   startDate: lastWeekDate.toISOString(),
+  //   endDate: today.toISOString(), 
+  //   bucketUnit: "DAY",
+  //   bucketInterval: 1,
+  // };
+
+  // let fetchStepsData = async (opt: any) => {
+  //   const res = await GoogleFit.getDailyStepCountSamples(opt);
+  //   if (res.length !== 0) {
+  //     for (var i = 0; i < res.length; i++) {
+  //       if (res[i].source === "com.google.android.gms:estimated_steps") {
+  //         let data = res[i].steps.reverse();
+  //         let dailyStepCount = res[i].steps;
+  //         setdailySteps(data[0].value);
+
+  //         console.log(dailySteps, dailyStepCount);
+  //       }
+  //     }
+  //   } else {
+  //     console.log("Not Found");
+  //   }
+  // };
 
   return (
     <SafeAreaView style={styles.container}>

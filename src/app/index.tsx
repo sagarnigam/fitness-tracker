@@ -20,8 +20,8 @@ export default function Index() {
 
   const configureGoogle = () => {
     GoogleSignin.configure({
-      webClientId: "",
-      scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
+      webClientId: "94632001537-j2i0t4rphlk40oudlfk0dk9fsj46g8to.apps.googleusercontent.com",
+      scopes: ["https://www.googleapis.com/auth/drive.readonly"],
     });
 
     signIn();
@@ -70,20 +70,20 @@ export default function Index() {
           <Text style={styles.homeText}>
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => router.push("(tabs)")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-          </TouchableOpacity>
-          {/* <GoogleSigninButton
+          </TouchableOpacity> */}
+          <GoogleSigninButton
             size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => {
               configureGoogle();
             }}
             disabled={false}
-          /> */}
+          />
         </Animated.View>
       </ImageBackground>
     </View>
