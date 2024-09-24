@@ -42,7 +42,7 @@ export default function ExercisesScreen() {
     content = (
       <ScrollView>
         {exercises.map((item: any) => (
-          <TouchableOpacity key={item.id}>
+          <TouchableOpacity key={item._id}>
             <ExerciseCard exerciseDetails={item} />
           </TouchableOpacity>
         ))}
