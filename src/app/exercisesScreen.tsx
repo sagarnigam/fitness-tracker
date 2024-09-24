@@ -7,26 +7,41 @@ import {
   ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { EXERCISE_LIST } from "../mock-data/exercise-list";
+import React, { useEffect, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ExerciseCard from "../components/exerciseCard";
+import { getExercises } from "../services/exerciseService";
 
 export default function ExercisesScreen() {
+  const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const { category } = useLocalSearchParams();
   const router = useRouter();
 
+  useEffect(() => {
+    // Fetch exercises when the component mounts
+    const fetchExercises = async () => {
+      try {
+        const data = await getExercises(category);
+        setExercises(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchExercises();
+  }, []);
+
   let content;
-  if (
-    EXERCISE_LIST.filter((exercises) => exercises.exerciseCategory === category)
-      .length > 0
-  ) {
+  if (exercises.length > 0) {
     content = (
       <ScrollView>
-        {EXERCISE_LIST.filter(
-          (exercise) => exercise.exerciseCategory === category
-        )[0].exercise.map((item: any) => (
+        {exercises.map((item: any) => (
           <TouchableOpacity key={item.id}>
             <ExerciseCard exerciseDetails={item} />
           </TouchableOpacity>

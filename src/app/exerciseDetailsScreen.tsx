@@ -52,8 +52,8 @@ export default function exerciseDetailsScreen() {
             <Text style={styles.text}>{exerciseData.description}</Text>
           </View>
           <View style={[styles.card]}>
-            <Text style={styles.subheaderText}>Muscles</Text>
-            <Text style={styles.text}>{exerciseData.muscles.join(", ")}</Text>
+            <Text style={styles.subheaderText}>Target Muscles</Text>
+            <Text style={styles.text}>{exerciseData.mainTargetMuscle}</Text>
           </View>
           <View style={[styles.card]}>
             <Text style={styles.subheaderText}>Instructions</Text>
