@@ -11,7 +11,7 @@ const WorkoutCard = ({ workoutDetails }: { workoutDetails: Workout}) => {
 
   return (
     <TouchableOpacity onPress={() => router.push({ pathname: "workoutRoutine", params: { workoutDetailsParams } })}>
-      <ImageBackground source={workoutDetails.programImage} style={styles.card}>
+      <ImageBackground source={require("../../assets/images/chest.jpg")} style={styles.card}>
         <LinearGradient
           colors={["rgba(0, 0, 0, 1)", "rgba(0, 0, 0, 0)"]}
           start={{ x: 0, y: 0 }}

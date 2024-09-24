@@ -7,24 +7,42 @@ import {
   ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { MY_WORKOUTS } from "../mock-data/my-workouts";
 import { useRouter } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import WorkoutCard from "../components/workoutCard";
+import { getWorkoutPrograms } from "../services/workoutService";
 
 const Workouts = () => {
+  const [workoutPrograms, setWorkoutPrograms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const router = useRouter();
 
+  useEffect(() => {
+    // Fetch exercises when the component mounts
+    const fetchWorkoutPrograms = async () => {
+      try {
+        const data = await getWorkoutPrograms();
+        setWorkoutPrograms(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchWorkoutPrograms();
+  }, []);
+
   let content;
-  if (
-    MY_WORKOUTS.length > 0
-  ) {
+  if (workoutPrograms.length > 0) {
     content = (
       <ScrollView>
-        {MY_WORKOUTS.map((item: any) => (
-          <TouchableOpacity key={item.id}>
-           <WorkoutCard workoutDetails={item} />
+        {workoutPrograms.map((item: any) => (
+          <TouchableOpacity key={item._id}>
+            <WorkoutCard workoutDetails={item} />
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -47,7 +65,7 @@ const Workouts = () => {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -75,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Workouts
+export default Workouts;
