@@ -8,49 +8,49 @@ import {
   ImageBackground,
 } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
-import {
-  statusCodes,
-  GoogleSigninButton,
-  GoogleSignin,
-  isErrorWithCode,
-} from "@react-native-google-signin/google-signin";
+// import {
+//   statusCodes,
+//   GoogleSigninButton,
+//   GoogleSignin,
+//   isErrorWithCode,
+// } from "@react-native-google-signin/google-signin";
 
 export default function Index() {
   const router = useRouter();
 
-  const configureGoogle = () => {
-    GoogleSignin.configure({
-      webClientId: "94632001537-j2i0t4rphlk40oudlfk0dk9fsj46g8to.apps.googleusercontent.com",
-      scopes: ["https://www.googleapis.com/auth/drive.readonly"],
-    });
+  // const configureGoogle = () => {
+  //   GoogleSignin.configure({
+  //     webClientId: "",
+  //     scopes: ["https://www.googleapis.com/auth/drive.readonly"],
+  //   });
 
-    signIn();
-  };
+  //   signIn();
+  // };
 
-  const signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const response = await GoogleSignin.signIn();
-      console.log(JSON.stringify(response));
-      router.push("(tabs)");
-    } catch (error) {
-      if (error) {
-        switch (error) {
-          case statusCodes.IN_PROGRESS:
-            console.log(error);
-            break;
-          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-            console.log(error);
-            break;
-          default:
-            console.log(error);
-        }
-      } else {
-        console.log(error);
+  // const signIn = async () => {
+  //   try {
+  //     await GoogleSignin.hasPlayServices();
+  //     const response = await GoogleSignin.signIn();
+  //     console.log(JSON.stringify(response));
+  //     router.push("(tabs)");
+  //   } catch (error) {
+  //     if (error) {
+  //       switch (error) {
+  //         case statusCodes.IN_PROGRESS:
+  //           console.log(error);
+  //           break;
+  //         case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+  //           console.log(error);
+  //           break;
+  //         default:
+  //           console.log(error);
+  //       }
+  //     } else {
+  //       console.log(error);
         
-      }
-    }
-  };
+  //     }
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
@@ -70,20 +70,20 @@ export default function Index() {
           <Text style={styles.homeText}>
             like never <Text style={styles.hightlightText}>before</Text>
           </Text>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() => router.push("(tabs)")}
             style={styles.primaryButton}
           >
             <Text style={styles.buttonText}>Get Started</Text>
-          </TouchableOpacity> */}
-          <GoogleSigninButton
+          </TouchableOpacity>
+          {/* <GoogleSigninButton
             size={GoogleSigninButton.Size.Standard}
             color={GoogleSigninButton.Color.Dark}
             onPress={() => {
               configureGoogle();
             }}
             disabled={false}
-          />
+          /> */}
         </Animated.View>
       </ImageBackground>
     </View>
