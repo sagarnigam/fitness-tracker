@@ -18,6 +18,8 @@ const WorkoutRoutine = () => {
     : null;
   const router = useRouter();
 
+  const items = Array.from({ length: programData.programLength }, (_, index) => index + 1);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" backgroundColor="#09131F" />
@@ -32,18 +34,18 @@ const WorkoutRoutine = () => {
         <View style={styles.exercisesListContainerContainer}>
           <Text style={styles.listHeaderText}>Workout Plan</Text>
           <ScrollView>
-            {programData.programStructure.map((day: any) => (
+            {items.map((day: any) => (
               <TouchableOpacity
-                key={day.day}
+                key={day}
                 onPress={() =>
                   router.push({
                     pathname: "dailyWorkoutStructureScreen",
-                    params: { day: day.day, programId: programData.id},
+                    params: { day: day.day, programId: programData._id},
                   })
                 }
               >
                 <View style={styles.dayCard}>
-                  <Text style={styles.dayCategoryText}>Day {day.day}</Text>
+                  <Text style={styles.dayCategoryText}>Day {day}</Text>
                 </View>
               </TouchableOpacity>
             ))}
