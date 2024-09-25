@@ -17,7 +17,7 @@ const DailyWorkoutStuctureScreen = () => {
   const [programStructure, setProgramStructure] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const workoutProgramData = useLocalSearchParams();
   const router = useRouter();
 
@@ -25,7 +25,10 @@ const DailyWorkoutStuctureScreen = () => {
     // Fetch exercises when the component mounts
     const fetchProgramStructureByDay = async () => {
       try {
-        const data = await getProgramStructureByDay(workoutProgramData.programId, workoutProgramData.day);
+        const data = await getProgramStructureByDay(
+          workoutProgramData.programId,
+          workoutProgramData.day
+        );
         setProgramStructure(data);
       } catch (err: any) {
         setError(err.message);
@@ -48,11 +51,29 @@ const DailyWorkoutStuctureScreen = () => {
           <Text style={styles.headerText}>Day {workoutProgramData.day}</Text>
         </View>
         <View style={styles.exercisesListContainerContainer}>
-          {/* <ScrollView>
-            {workoutDayDetails.exercises.map((exercisesArray, index) =>
-                <RoutineExerciseCard exercisesArray={exercisesArray} key={index}/>
+          {/* Show a loading indicator if data is still loading */}
+          {loading ? (
+            <Text style={{ color: "white" }}>Loading...</Text>
+          ) : error ? (
+            <Text style={{ color: "red" }}>Error: {error}</Text>
+          ) : (
+            <ScrollView>
+              {/* Check if exercises array exists before mapping */}
+              {programStructure.exercises &&
+              programStructure.exercises.length > 0 ? (
+                programStructure.exercises.map((exercisesArray, index) => (
+                  <RoutineExerciseCard
+                    exercisesArray={exercisesArray}
+                    key={index}
+                  />
+                ))
+              ) : (
+                <Text style={{ color: "white" }}>
+                  No exercises available for this day.
+                </Text>
               )}
-          </ScrollView> */}
+            </ScrollView>
+          )}
         </View>
       </View>
     </SafeAreaView>
