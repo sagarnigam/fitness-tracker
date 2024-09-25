@@ -40,7 +40,7 @@ const WorkoutRoutine = () => {
                 onPress={() =>
                   router.push({
                     pathname: "dailyWorkoutStructureScreen",
-                    params: { day: day.day, programId: programData._id},
+                    params: { day: day, programId: programData._id},
                   })
                 }
               >

@@ -6,19 +6,36 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { MY_WORKOUTS } from "../mock-data/my-workouts";
 import RoutineExerciseCard from "../components/routineExerciseCard";
+import { getProgramStructureByDay } from "../services/workoutService";
 
 const DailyWorkoutStuctureScreen = () => {
+  const [programStructure, setProgramStructure] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
   const workoutProgramData = useLocalSearchParams();
   const router = useRouter();
 
-  let program = MY_WORKOUTS.filter((program) => program.id === workoutProgramData.programId)[0];
-  let workoutDayDetails = program.programStructure.filter((selectDay) => selectDay.day === workoutProgramData.day)[0];
+  useEffect(() => {
+    // Fetch exercises when the component mounts
+    const fetchProgramStructureByDay = async () => {
+      try {
+        const data = await getProgramStructureByDay(workoutProgramData.programId, workoutProgramData.day);
+        setProgramStructure(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProgramStructureByDay();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -31,11 +48,11 @@ const DailyWorkoutStuctureScreen = () => {
           <Text style={styles.headerText}>Day {workoutProgramData.day}</Text>
         </View>
         <View style={styles.exercisesListContainerContainer}>
-          <ScrollView>
+          {/* <ScrollView>
             {workoutDayDetails.exercises.map((exercisesArray, index) =>
                 <RoutineExerciseCard exercisesArray={exercisesArray} key={index}/>
               )}
-          </ScrollView>
+          </ScrollView> */}
         </View>
       </View>
     </SafeAreaView>
